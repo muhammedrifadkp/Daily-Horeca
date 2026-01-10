@@ -14,6 +14,10 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="icon" href="images/logo-only.png" type="image/png">
+  <!-- Optimization: Preload LCP Image -->
+  <link rel="preload" as="image" href="images/hero.jpg">
 </head>
 
 <body>
@@ -21,7 +25,9 @@
   <!-- Sticky Header -->
   <header id="navbar">
     <div class="container nav-container">
-      <h1 class="logo">Daily<span>Horeca</span>.</h1>
+      <a href="#home" class="logo-link">
+        <img src="images/name-only.png" alt="Daily Horeca" class="logo-img">
+      </a>
       <nav>
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
@@ -100,7 +106,9 @@
       <div class="segment-grid">
         <!-- HO -->
         <div class="segment-card">
-          <div class="card-image" style="background-image: url('images/hotel.png');"></div>
+          <div class="card-image">
+            <img src="images/hotel.png" alt="Hotel Supplies" loading="lazy">
+          </div>
           <div class="card-content">
             <div class="icon-circle">HO</div>
             <h4>Hotels</h4>
@@ -109,7 +117,9 @@
         </div>
         <!-- RE -->
         <div class="segment-card">
-          <div class="card-image" style="background-image: url('images/restaurant.png');"></div>
+          <div class="card-image">
+            <img src="images/restaurant.png" alt="Restaurant Supplies" loading="lazy">
+          </div>
           <div class="card-content">
             <div class="icon-circle">RE</div>
             <h4>Restaurants</h4>
@@ -118,7 +128,9 @@
         </div>
         <!-- CA -->
         <div class="segment-card">
-          <div class="card-image" style="background-image: url('images/cafe.png');"></div>
+          <div class="card-image">
+            <img src="images/cafe.png" alt="Cafe Supplies" loading="lazy">
+          </div>
           <div class="card-content">
             <div class="icon-circle">CA</div>
             <h4>Cafes</h4>
@@ -186,10 +198,18 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <ul>
-          <li>+91 918086262762</li>
-          <!-- <li>support@dailyhoreca.com</li> -->
-          <!-- <li>Mumbai, India</li> -->
+        <ul class="footer-contact">
+          <li><i class="fas fa-phone"></i> <a href="tel:+918086262762">+91 80862 62762</a></li>
+          <li><i class="fas fa-envelope"></i> <a
+              href="mailto:dailyhorecaonline@gmail.com">dailyhorecaonline@gmail.com</a></li>
+          <li><i class="fas fa-map-marker-alt"></i> <a
+              href="https://www.google.com/maps/search/?api=1&query=Beluri+Complex,+Kasaragod,+671121"
+              target="_blank">Beluri Complex, Anebagilu Road, Near Viceroy Restaurant, Kasaragod, 671121</a></li>
+          <li class="social-item">
+            <a href="https://www.instagram.com/dailyhoreca?igsh=OHY3ZjRtMmY2bWFq" target="_blank">
+              <i class="fab fa-instagram"></i> @dailyhoreca
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -198,7 +218,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>
