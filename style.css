@@ -1,14 +1,16 @@
 /* Global Styles */
 :root {
-  --primary: #0F5132;
-  --primary-dark: #093622;
-  --accent: #E8F5E9;
-  --text-dark: #222;
-  --text-light: #666;
+  --primary-green: #1E7F5C;
+  --dark-green: #145A42;
+  --off-white: #FAFAF7;
+  --soft-blue: #1F4FD8;
+  --warm-yellow: #F4C430;
+  --charcoal: #222222;
+  --light-gray: #F4F4F4;
   --white: #ffffff;
-  --off-white: #f9f9f9;
   --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
+  --font-main: 'noto-sans', sans-serif;
 }
 
 * {
@@ -19,9 +21,11 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'noto-sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
   line-height: 1.6;
-  color: var(--text-dark);
+  color: var(--charcoal);
   background-color: var(--white);
   overflow-x: hidden;
 }
@@ -32,8 +36,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Playfair Display', serif;
-  color: var(--primary);
+  font-family: 'noto-sans', sans-serif;
+  color: var(--primary-green);
 }
 
 a {
@@ -85,14 +89,14 @@ img {
 }
 
 .btn-primary {
-  background-color: var(--primary);
+  background-color: var(--primary-green);
   color: var(--white);
-  border: 2px solid var(--primary);
+  border: 2px solid var(--primary-green);
 }
 
 .btn-primary:hover {
   background-color: transparent;
-  color: var(--primary);
+  color: var(--primary-green);
 }
 
 .btn-secondary {
@@ -103,8 +107,9 @@ img {
 }
 
 .btn-secondary:hover {
-  background-color: var(--white);
-  color: var(--primary);
+  background-color: var(--warm-yellow);
+  border-color: var(--warm-yellow);
+  color: var(--charcoal);
 }
 
 .btn-whatsapp {
@@ -161,7 +166,7 @@ header {
 }
 
 .nav-links a:hover {
-  color: var(--primary);
+  color: var(--primary-green);
 }
 
 .nav-links .btn-primary {
@@ -177,7 +182,7 @@ header {
 
 /* Hero Section */
 .hero {
-  height: 100vh;
+  height: 96vh;
   background: url('images/hero.jpg') no-repeat center center/cover;
   position: relative;
   display: flex;
@@ -216,7 +221,7 @@ header {
 
 /* Trust Banner */
 .trust-banner {
-  background-color: var(--primary);
+  background-color: var(--primary-green);
   color: var(--white);
   padding: 30px 0;
   margin-top: -50px;
@@ -266,7 +271,7 @@ header {
   left: 0;
   width: 60px;
   height: 3px;
-  background-color: var(--primary);
+  background-color: var(--primary-green);
 }
 
 .section-title.center::after {
@@ -281,11 +286,18 @@ header {
 }
 
 .text-link {
-  color: var(--primary);
+  color: var(--soft-blue);
   font-weight: 600;
-  border-bottom: 1px solid var(--primary);
+  border-bottom: 2px solid var(--soft-blue);
   display: inline-block;
   margin-top: 10px;
+  transition: var(--transition);
+}
+
+.text-link:hover {
+  color: var(--dark-green);
+  border-bottom-color: var(--dark-green);
+  transform: translateX(5px);
 }
 
 .about-stats {
@@ -295,7 +307,7 @@ header {
 }
 
 .stat-box {
-  background-color: var(--accent);
+  background-color: var(--light-gray);
   padding: 40px;
   text-align: center;
   border-radius: 10px;
@@ -359,7 +371,7 @@ header {
 .icon-circle {
   width: 60px;
   height: 60px;
-  background-color: var(--primary);
+  background-color: var(--primary-green);
   color: var(--white);
   border-radius: 50%;
   display: flex;
@@ -383,6 +395,7 @@ header {
   font-size: 0.95rem;
 }
 
+
 /* Services */
 .services-grid {
   display: grid;
@@ -400,13 +413,13 @@ header {
 }
 
 .service-item:hover {
-  border-color: var(--primary);
-  background-color: var(--accent);
+  border-color: var(--primary-green);
+  background-color: var(--light-gray);
 }
 
 .service-item i {
   font-size: 2.5rem;
-  color: var(--primary);
+  color: var(--primary-green);
   margin-bottom: 20px;
 }
 
@@ -422,7 +435,7 @@ header {
 
 /* CTA */
 .cta-section {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
   color: var(--white);
   text-align: center;
   padding: 100px 20px;
@@ -473,12 +486,12 @@ footer {
 }
 
 .footer-col ul li i {
-  color: var(--primary);
+  color: var(--primary-green);
   margin-top: 5px;
 }
 
 .footer-col a:hover {
-  color: var(--primary);
+  color: var(--soft-blue);
 }
 
 .footer-bottom {
@@ -578,7 +591,7 @@ footer {
 
   .hamburger {
     display: block;
-    color: var(--primary);
+    color: var(--primary-green);
   }
 
   /* Hero adjustments */
