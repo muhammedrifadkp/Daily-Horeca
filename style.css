@@ -76,7 +76,8 @@ img {
 /* Buttons */
 .btn-primary,
 .btn-secondary,
-.btn-whatsapp {
+.btn-whatsapp,
+.btn-catalogue {
   display: inline-block;
   padding: 12px 30px;
   border-radius: 50px;
@@ -126,6 +127,18 @@ img {
 .btn-whatsapp:hover {
   background-color: #128C7E;
   transform: translateY(-2px);
+}
+
+.btn-catalogue {
+  background-color: var(--warm-yellow);
+  color: var(--charcoal);
+  border: 2px solid var(--warm-yellow);
+  margin-left: 15px;
+}
+
+.btn-catalogue:hover {
+  background-color: transparent;
+  color: var(--warm-yellow);
 }
 
 /* Header */
@@ -494,6 +507,11 @@ footer {
   color: var(--soft-blue);
 }
 
+.footer-col .btn-catalogue {
+  margin-left: 0;
+  margin-top: 20px;
+}
+
 .footer-bottom {
   text-align: center;
   border-top: 1px solid #333;
@@ -623,7 +641,8 @@ footer {
     align-items: center;
   }
 
-  .btn-secondary {
+  .btn-secondary,
+  .btn-catalogue {
     margin-left: 0;
     /* Remove margin in column layout */
   }
