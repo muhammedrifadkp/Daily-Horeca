@@ -446,6 +446,87 @@ header {
   font-size: 0.9rem;
 }
 
+/* Brands Section */
+.brands-section {
+  padding: 60px 0;
+  background-color: var(--white);
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.brands-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 80px;
+  padding: 20px 40px;
+  align-items: center;
+}
+
+.marquee-content img {
+  height: 60px;
+  width: auto;
+  filter: grayscale(0%);
+  opacity: 1;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+/* When marquee is hovered, fade and grayscale all logos */
+.marquee:hover img {
+  filter: grayscale(100%);
+  opacity: 0.4;
+}
+
+/* Specific logo being hovered: show color, full opacity, and scale up */
+.marquee-content img:hover {
+  filter: grayscale(0%);
+  opacity: 1 !important;
+  transform: scale(1.2);
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile Adjustments for Brands */
+@media (max-width: 768px) {
+  .marquee-content {
+    gap: 40px;
+  }
+
+  .marquee-content img {
+    height: 40px;
+  }
+
+  .brands-section {
+    padding: 40px 0;
+  }
+}
+
+
 /* CTA */
 .cta-section {
   background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
