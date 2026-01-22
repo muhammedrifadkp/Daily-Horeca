@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Google Fonts -->
-
-  <link rel="stylesheet" href="https://use.typekit.net/mad0gne.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -73,6 +75,9 @@
         <img src="images/name-only.png" alt="Daily Horeca" class="logo-img">
       </a>
       <nav>
+        <div class="nav-close">
+          <i class="fas fa-times"></i>
+        </div>
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -106,15 +111,25 @@
   <div class="trust-banner">
     <div class="container trust-grid">
       <div class="trust-item">
-        <i class="fas fa-truck-fast"></i>
+        <div class="trust-icon delivery">
+          <i class="fas fa-truck-fast"></i>
+          <div class="speed-lines">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
         <span>Fast Delivery</span>
       </div>
       <div class="trust-item">
-        <i class="fas fa-shield-halved"></i>
+        <div class="trust-icon quality">
+          <i class="fas fa-shield-halved"></i>
+          <div class="pulse-ring"></div>
+        </div>
         <span>Quality Assured</span>
       </div>
       <div class="trust-item">
-        <i class="fas fa-utensils"></i>
+        <div class="trust-icon hospitality">
+          <i class="fas fa-utensils"></i>
+        </div>
         <span>Hospitality Focused</span>
       </div>
     </div>
@@ -133,12 +148,43 @@
       </div>
       <div class="about-stats fade-in-right">
         <div class="stat-box">
-          <h4>500+</h4>
-          <p>Clients Served</p>
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Clients Served</span>
         </div>
         <div class="stat-box">
-          <h4>100%</h4>
-          <p>Reliability</p>
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Reliability Rate</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="value-grid">
+        <div class="value-card">
+          <div class="value-header">
+            <span class="value-num">01</span>
+            <h4>Direct Sourcing</h4>
+          </div>
+          <p>We work directly with premium brands to ensure you get the freshest stock at the most competitive wholesale
+            prices.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-header">
+            <span class="value-num">02</span>
+            <h4>Cold Chain Mastery</h4>
+          </div>
+          <p>Our specialized temperature-controlled logistics ensure that frozen products maintain their quality from
+            our warehouse to your kitchen.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-header">
+            <span class="value-num">03</span>
+            <h4>Daily Reliability</h4>
+          </div>
+          <p>Our name is our promise. We deliver daily, ensuring your operations never face a shortage or delay.</p>
         </div>
       </div>
     </div>
@@ -216,6 +262,37 @@
     </div>
   </section>
 
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h3 class="section-title center">Trusted by the Best</h3>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text">"Daily Horeca has been our most reliable partner for three years. Their commitment
+            to quality and on-time delivery is unmatched in the region."</p>
+          <div class="testimonial-footer">
+            <div class="client-info">
+              <strong>Executive Chef</strong>
+              <span>Luxury Resort Partner</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text">"The range of frozen products they offer has helped us simplify our sourcing
+            tremendously. Professional, efficient, and always helpful."</p>
+          <div class="testimonial-footer">
+            <div class="client-info">
+              <strong>General Manager</strong>
+              <span>Premium Cafe Chain</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Brands Showcase -->
   <section class="brands-section">
     <div class="container">
@@ -240,7 +317,23 @@
           <img src="images/DAILY HORECA BRANDS/veeba.png" alt="Veeba">
           <img src="images/DAILY HORECA BRANDS/zippy.png" alt="Zippy">
         </div>
-        <!-- Group 2 (Duplicate for seamless loop) -->
+        <!-- Group 2 -->
+        <div class="marquee-content">
+          <img src="images/DAILY HORECA BRANDS/HUNGRITOS.png" alt="HUNGRITOS">
+          <img src="images/DAILY HORECA BRANDS/amul.png" alt="Amul">
+          <img src="images/DAILY HORECA BRANDS/cp.png" alt="CP">
+          <img src="images/DAILY HORECA BRANDS/fresh2go.png" alt="Fresh2Go">
+          <img src="images/DAILY HORECA BRANDS/freshstory.jpeg" alt="Fresh Story">
+          <img src="images/DAILY HORECA BRANDS/habit.png" alt="Habit">
+          <img src="images/DAILY HORECA BRANDS/hufun.png" alt="Hufun">
+          <img src="images/DAILY HORECA BRANDS/mala's.png" alt="Mala's">
+          <img src="images/DAILY HORECA BRANDS/nandini.png" alt="Nandini">
+          <img src="images/DAILY HORECA BRANDS/savoureux.png" alt="Savoureux">
+          <img src="images/DAILY HORECA BRANDS/truefroot.png" alt="True Froot">
+          <img src="images/DAILY HORECA BRANDS/veeba.png" alt="Veeba">
+          <img src="images/DAILY HORECA BRANDS/zippy.png" alt="Zippy">
+        </div>
+        <!-- Group 3 (Triple duplicate for absolute seamlessness on ultra-wide screens) -->
         <div class="marquee-content">
           <img src="images/DAILY HORECA BRANDS/HUNGRITOS.png" alt="HUNGRITOS">
           <img src="images/DAILY HORECA BRANDS/amul.png" alt="Amul">

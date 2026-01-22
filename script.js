@@ -11,31 +11,26 @@ window.addEventListener('scroll', function () {
 // Mobile Menu Toggle
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
+const navClose = document.querySelector('.nav-close');
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-
-  // Animate hamburger icon (optional simple toggle)
-  const icon = hamburger.querySelector('i');
-  if (navLinks.classList.contains('active')) {
-    icon.classList.remove('fa-bars');
-    icon.classList.add('fa-times');
+const toggleMenu = (show) => {
+  if (show) {
+    navLinks.classList.add('active');
+    navClose.classList.add('active'); // If we want to animate it separately
   } else {
-    icon.classList.remove('fa-times');
-    icon.classList.add('fa-bars');
+    navLinks.classList.remove('active');
+    navClose.classList.remove('active');
   }
-});
+};
+
+hamburger.addEventListener('click', () => toggleMenu(true));
+navClose.addEventListener('click', () => toggleMenu(false));
 
 // Smooth Scroll for Anchor Links (Backup for older browsers)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    navLinks.classList.remove('active'); // Close mobile menu on click
-
-    // Reset icon
-    const icon = hamburger.querySelector('i');
-    icon.classList.remove('fa-times');
-    icon.classList.add('fa-bars');
+    toggleMenu(false); // Use the central function to reset classes
 
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth'
@@ -45,27 +40,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Scroll Reveal Animation
 const observerOptions = {
-  threshold: 0.1
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('fade-in');
-      // Note: You can add specific classes for left/right if you want advanced anims
-      // For now, we reuse the existing fade-in for simplicity or add inline styles
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     }
   });
 }, observerOptions);
 
 // Select elements to animate
-document.querySelectorAll('.section-title, .about-text, .about-stats, .segment-card, .service-item').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+document.querySelectorAll('.section-title, .about-text, .about-stats, .segment-card, .service-item, .fade-in-left, .fade-in-right').forEach(el => {
+  // If it doesn't have a specific fade class, give it the default reveal behavior
+  if (!el.classList.contains('fade-in-left') && !el.classList.contains('fade-in-right')) {
+    el.classList.add('reveal');
+  }
   observer.observe(el);
 });
 
