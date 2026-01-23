@@ -321,7 +321,7 @@ header.scrolled .logo-img {
 .trust-banner {
   background-color: var(--white);
   color: var(--text-primary);
-  padding: 60px 0;
+  padding: 20px 0;
   margin-top: -60px;
   position: relative;
   z-index: 2;
@@ -738,6 +738,126 @@ header.scrolled .logo-img {
   letter-spacing: 1px;
 }
 
+/* Services Section */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.service-card {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-premium);
+  border-color: transparent;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--off-white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  transition: var(--transition);
+}
+
+.service-icon i {
+  font-size: 1.8rem;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.service-card:hover .service-icon {
+  background: var(--primary);
+}
+
+.service-card:hover .service-icon i {
+  color: var(--white);
+  transform: rotateY(360deg);
+}
+
+.service-info h4 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.service-info p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.service-list {
+  margin: 0;
+  padding: 0;
+}
+
+.service-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.service-list li i {
+  color: var(--accent);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 1100px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 30px;
+  }
+}
+
 /* Brands Section */
 .brands-section {
   padding: 60px 0;
@@ -920,11 +1040,25 @@ footer {
   font-size: 0.8rem;
 }
 
+.section-header {
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
 .section-subtitle.center {
   display: block;
   text-align: center;
-  margin-top: 10px;
-  color: var(--text-light);
+  margin-top: 20px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.service-list li:hover {
+  color: var(--primary);
+  transform: translateX(5px);
+  transition: var(--transition);
 }
 
 /* Animations */

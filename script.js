@@ -54,7 +54,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Select elements to animate
-document.querySelectorAll('.section-title, .about-text, .about-stats, .segment-card, .service-item, .fade-in-left, .fade-in-right').forEach(el => {
+document.querySelectorAll('.section-title, .section-subtitle, .about-text, .about-stats, .segment-card, .service-card, .fade-in-left, .fade-in-right').forEach(el => {
   // If it doesn't have a specific fade class, give it the default reveal behavior
   if (!el.classList.contains('fade-in-left') && !el.classList.contains('fade-in-right')) {
     el.classList.add('reveal');
